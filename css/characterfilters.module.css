@@ -1,0 +1,260 @@
+@import url('./variables.css');
+
+/* Button header container */
+
+.showFiltersButton {
+    display: none;
+}
+
+.buttonHeader {
+    width: 100%;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttonNormal {
+    border: none;
+}
+
+.buttonPressed {
+    opacity: 1;
+}
+
+.notPressed {
+    opacity: 0.7;
+}
+
+/* Render options */
+.renderOptions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin: var(--spacing-sm) 0;
+}
+
+.renderOptions input,
+.renderOptions button,
+.renderOptions p {
+    margin: 0 var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+
+}
+
+.renderOptions input {
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: box-shadow 0.3s ease;
+}
+
+.renderOptions input:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter buttons */
+.renderOptions button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-inverse);
+    font-weight: normal;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    outline: none;
+}
+
+.renderOptions button:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+.renderOptions .buttonPressed {
+    background-color: var(--color-secondary);
+    color: var(--color-text-inverse);
+}
+
+/* Search bar */
+.searchBar {
+    width: 200px;
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md)!important;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: box-shadow 0.3s ease;
+}
+
+.searchBar:focus {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-primary); /* Change border color on focus */
+    outline: none; /* Remove the default browser outline */
+}
+
+.searchBar:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Render count input */
+.characterCount {
+    width: 100px;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md)!important;;
+}
+
+.characterCount:focus {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-primary); /* Change border color on focus */
+    outline: none; /* Remove the default browser outline */
+}
+
+
+
+/* Clear filters and favorites */
+.renderOptions p {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.renderOptions p:hover {
+    color: var(--color-secondary);
+}
+
+/* Favorite buttons and container */
+.favoriteButtonContainer {
+    margin-top: var(--spacing-md);
+}
+
+.clearButton {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--color-danger);
+    color: var(--color-text-inverse);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.clearButton:hover {
+    background-color: var(--color-danger-dark);
+    transform: scale(1.05);
+}
+
+.clearButton p {
+    margin: 0;
+}
+
+/* Responsive Design Responsive Design Responsive Design Responsive Design Responsive Design Responsive Design Responsive Design */
+@media (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    @import url('./variables.css');
+
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .buttonHeader {
+        border-top: 1px solid var(--color-border);
+        padding: var(--spacing-md);
+        padding-top: 24px;
+        margin: 0 0 5px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        opacity: 0;
+        animation: slideDown 0.3s ease-out forwards;
+    }
+
+    .renderOptions {
+        flex-direction: row;
+        gap: 3px;
+        margin: 0;
+        padding: 0;
+        width: 80%;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .renderOptions input,
+    .renderOptions button,
+    .renderOptions p {
+        margin: 5px;
+        padding: 5px 10px;
+    }
+
+
+
+    .characterCount {        
+        width: 50px!important;
+        padding: 5px 5px;
+        text-align: center;
+        border-radius: none!important;
+    }
+
+    .searchBar {
+        padding: 10px 10px!important;
+    }
+
+    .showFiltersButton {
+        display: flex;
+        padding: 5px 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        width: 50%;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 100ms ease-in-out;
+        transform: translateY(45%);
+        background-color:  var(--color-border);
+    }
+    
+    .filterTextContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .iconMargin {
+        margin-left: 10px; 
+    }
+    
+
+    .showFiltersButton:active {
+        background-color: rgb(190, 190, 190);
+        transition: 10ms;
+    }
+
+}
