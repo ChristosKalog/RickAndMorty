@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "React";
 import { Link } from "react-router-dom";
-import styles from "../css/character.module.css"; // Import the CSS module
-import CharacterFilters from "./CharacterFilters"; // Import CharacterFilters
+import styles from "../css/character.module.css"; 
+import CharacterFilters from "./CharacterFilters"; 
 
 
 export default function Character({ characters }) {

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from "React";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import styles from "../css/characterDetail.module.css"; // Import the CSS module
-import FullSizeImageModal from "./FullSizeImageModal"; // Import the new modal component
+import styles from "../css/characterDetail.module.css";
+import FullSizeImageModal from "./FullSizeImageModal"; 
 
 export default function CharacterDetail({ characters }) {
 
@@ -13,15 +13,13 @@ export default function CharacterDetail({ characters }) {
 
   const { id } = useParams();
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
-  // Find the character based on the id from params
   const character = characters.find((char) => char.id === parseInt(id));
   if (!character) return <div>Loading...</div>;
 
-  // Function to handle image click (for mobile only)
   const handleImageClick = () => {
-    setIsModalOpen(true); // Open modal on image click
+    setIsModalOpen(true); // Open modal 
   };
 
   const handleCloseModal = () => {
@@ -39,11 +37,9 @@ export default function CharacterDetail({ characters }) {
 
 
           <h1>{character.name}</h1>
-          {/* <p>Width: {windowDimensions.width}px</p>
-          <p>Height: {windowDimensions.height}px</p> */}
+    
 
 
-        {/* Add onClick event to image */}
         <div className={styles.horizontalContainer}>
 
         <img
@@ -89,7 +85,6 @@ export default function CharacterDetail({ characters }) {
         </ul>
       </div>
 
-      {/* Render the modal if isModalOpen is true */}
       {isModalOpen && (
         <FullSizeImageModal character={character} onClose={handleCloseModal} />
       )}

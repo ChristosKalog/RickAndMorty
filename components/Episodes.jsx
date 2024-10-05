@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import styles from "../css/episodes.module.css"; // Import CSS module
+import styles from "../css/episodes.module.css"; 
 
 export default function Episodes({ episodes }) {
   const [displayedEpisodes, setDisplayedEpisodes] = useState([]);
