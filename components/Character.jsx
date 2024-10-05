@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "React";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import styles from "../css/character.module.css"; 
 import CharacterFilters from "./CharacterFilters"; 
