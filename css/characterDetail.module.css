@@ -11,7 +11,27 @@
     text-align: center;
 }
 
-.specs p strong {margin-left: 2px;}
+.specs {
+    text-align: left;
+    padding-right: var(--spacing-md);
+}
+.specs:last-child{
+    padding-right: 0;
+}
+
+
+.specsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: var(--spacing-sm) 0;
+}
+
+.specs p strong {
+    margin-left: 2px;
+}
 
 .characterDetailContainer h1 {
     font-size: 2.5rem;
@@ -125,12 +145,23 @@
 
     .specs {
         margin: var(--spacing-md) 0;
-
+        line-height: 1.5rem;
     }
 
-    .characterDetailContainer h2 {font-size: 1.5rem; margin-top: var(--spacing-sm); }
-    .characterDetailContainer h3 {font-size: 1rem;}
-    .characterDetailContainer p {font-size: 1rem;}
+    .specs strong,
+    .specs p {
+        font-size: 1.1rem;
+    }
+
+    .characterDetailContainer h2 {
+        font-size: 1.5rem;
+        margin-top: var(--spacing-sm);
+    }
+
+    .characterDetailContainer h3 {
+        font-size: 1rem;
+    }
+
 
 }
 
@@ -157,13 +188,17 @@
         align-items: center;
         justify-content: space-around;
     }
+
     .characterDetailContainer img {
-        max-width: 40%; /* Smaller image width for landscape */
+        max-width: 40%;
+        /* Smaller image width for landscape */
         height: 100%;
     }
 
+    .specs strong,
     .specs p {
-        font-size: 0.9rem; /* Adjust font size for smaller viewports */
+        font-size: 1.3rem;
+        line-height: 1.5rem;
     }
 
     .specs {
@@ -200,10 +235,9 @@
     }
 
     .buttonHeader {
-        justify-content: flex-start; /* Align the button to the left in landscape mode */
+        justify-content: flex-start;
     }
 
-    /* Adjust for very small heights, ensuring touch targets are large enough */
     .characterDetailContainer ul li {
         margin-bottom: var(--spacing-xs);
     }

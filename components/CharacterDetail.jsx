@@ -1,25 +1,23 @@
 import React, { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import styles from "../css/characterDetail.module.css";
-import FullSizeImageModal from "./FullSizeImageModal"; 
+import FullSizeImageModal from "./FullSizeImageModal";
 
 export default function CharacterDetail({ characters }) {
-
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
 
-
   const { id } = useParams();
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const character = characters.find((char) => char.id === parseInt(id));
   if (!character) return <div>Loading...</div>;
 
   const handleImageClick = () => {
-    setIsModalOpen(true); // Open modal 
+    setIsModalOpen(true); // Open modal
   };
 
   const handleCloseModal = () => {
@@ -35,48 +33,43 @@ export default function CharacterDetail({ characters }) {
           </Link>
         </div>
 
-
-          <h1>{character.name}</h1>
-    
-
+        <h1>{character.name}</h1>
 
         <div className={styles.horizontalContainer}>
-
-        <img
-          src={character.image}
-          alt={character.name}
-          className={styles.characterImage}
-          onClick={handleImageClick}
-        />
-        <div className={styles.specs}>
-          <p>
-            Status: <strong>{character.status}</strong>
-          </p>
-          <p>
-            Species: <strong>{character.species}</strong>
-          </p>
-          <p>
-            Gender: <strong>{character.gender}</strong>
-          </p>
-          {character.type && (
-            <p>
-              Type: <strong>{character.type}</strong>
-            </p>
-          )}
-          <p>
-            Origin: <strong>{character.origin.name}</strong>
-          </p>
-          <p>
-            Location: <strong>{character.location.name}</strong>
-          </p>
-          <p>
-            Created:{" "}
-            <strong>{new Date(character.created).toLocaleDateString()}</strong>
-          </p>
+          <img
+            src={character.image}
+            alt={character.name}
+            className={styles.characterImage}
+            onClick={handleImageClick}
+          />
+          <div className={styles.specsContainer}>
+            <div className={styles.specs}>
+              <p>Status:</p>
+              <p>Species:</p>
+              <p>Gender:</p>
+              {character.type && <p> Type:</p>}
+              <p>Origin:</p>
+              <p>Location:</p>
+              <p>Created: </p>
+            </div>
+            <div className={styles.specs}>
+              <p><strong>{character.status}</strong></p>
+              <p><strong>{character.species}</strong></p>
+              <p><strong>{character.gender}</strong>
+              </p>
+              {character.type && (
+                <p><strong>{character.type}</strong></p>
+              )}
+              <p><strong>{character.origin.name}</strong></p>
+              <p><strong>{character.location.name}</strong>
+              </p>
+              <p><strong>
+                  {new Date(character.created).toLocaleDateString()}
+                </strong>
+              </p>
+            </div>
+          </div>
         </div>
-                  
-        </div>
-
         <h2>Episodes</h2>
         <ul>
           {character.episode.map((episodeUrl, index) => (
@@ -84,7 +77,6 @@ export default function CharacterDetail({ characters }) {
           ))}
         </ul>
       </div>
-
       {isModalOpen && (
         <FullSizeImageModal character={character} onClose={handleCloseModal} />
       )}
