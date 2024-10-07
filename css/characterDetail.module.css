@@ -96,7 +96,7 @@
 
 .characterDetailContainer ul li {
     margin-bottom: var(--spacing-sm);
-    color: white;
+    color: var(--color-inverse-background);
 }
 
 .buttonHeader {

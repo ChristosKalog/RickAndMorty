@@ -17,10 +17,12 @@
     justify-content: center;
     background-color: var(--color-background-light);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--color-text-lighter);
 }
 
 .buttonNormal {
     border: none;
+
 }
 
 .buttonPressed {
@@ -45,7 +47,6 @@
 .renderOptions p {
     margin: 0 var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
-
 }
 
 .renderOptions input {
@@ -53,7 +54,7 @@
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-lg);
     background-color: var(--color-background);
-    color: var(--color-text);
+    color: var(--color-text-lighter);
     transition: box-shadow 0.3s ease;
 }
 
@@ -66,7 +67,7 @@
     padding: var(--spacing-sm) var(--spacing-md);
     background-color: var(--color-primary);
     border-radius: var(--border-radius-sm);
-    color: var(--color-text-inverse);
+    color: var(--color-text-lighter);
     font-weight: normal;
     font-size: 1rem;
     cursor: pointer;
@@ -89,7 +90,7 @@
     width: 200px;
     padding: var(--spacing-md);
     border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-md)!important;
+    border-radius: var(--border-radius-md) !important;
     background-color: var(--color-background);
     color: var(--color-text);
     transition: box-shadow 0.3s ease;
@@ -97,8 +98,10 @@
 
 .searchBar:focus {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    border-color: var(--color-primary); /* Change border color on focus */
-    outline: none; /* Remove the default browser outline */
+    border-color: var(--color-primary);
+    /* Change border color on focus */
+    outline: none;
+    /* Remove the default browser outline */
 }
 
 .searchBar:hover {
@@ -109,13 +112,16 @@
 .characterCount {
     width: 100px;
     padding: var(--spacing-sm);
-    border-radius: var(--border-radius-md)!important;;
+    border-radius: var(--border-radius-md) !important;
+    ;
 }
 
 .characterCount:focus {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    border-color: var(--color-primary); /* Change border color on focus */
-    outline: none; /* Remove the default browser outline */
+    border-color: var(--color-primary);
+    /* Change border color on focus */
+    outline: none;
+    /* Remove the default browser outline */
 }
 
 
@@ -124,7 +130,7 @@
 .renderOptions p {
     font-size: 1rem;
     text-align: center;
-    color: var(--color-text-muted);
+    color: var(--color-inverse-background);
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -146,7 +152,7 @@
     align-items: center;
     gap: var(--spacing-sm);
     background-color: var(--color-danger);
-    color: var(--color-text-inverse);
+    color: var(--color-text);
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
 }
@@ -214,15 +220,15 @@
 
 
 
-    .characterCount {        
-        width: 50px!important;
+    .characterCount {
+        width: 50px !important;
         padding: 5px 5px;
         text-align: center;
-        border-radius: none!important;
+        border-radius: none !important;
     }
 
     .searchBar {
-        padding: 10px 10px!important;
+        padding: 10px 10px !important;
     }
 
     .showFiltersButton {
@@ -237,20 +243,20 @@
         z-index: 1000;
         transition: opacity 100ms ease-in-out;
         transform: translateY(45%);
-        background-color:  var(--color-border);
+        background-color: var(--color-border);
     }
-    
+
     .filterTextContainer {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
     }
-    
+
     .iconMargin {
-        margin-left: 10px; 
+        margin-left: 10px;
     }
-    
+
 
     .showFiltersButton:active {
         background-color: rgb(190, 190, 190);

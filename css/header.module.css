@@ -1,13 +1,28 @@
-/* Basic header styles */
+@import url('./variables.css');
+
 .header {
-    background-color: #282c34;
-    padding: 10px 20px;
+    background-color: var(--color-background);
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 66px;
+    height: 44px;
 }
+
+.iconContainer {
+    display: flex;
+}
+.icon {
+    fill: var(--color-text) !important;
+    font-size: 22px;
+    transition: 500ms;
+}
+.icon:hover{
+opacity: 0.8;
+    cursor: pointer;
+    transition: 500ms;
+}
+
 
 /* Navigation styles */
 .nav ul {
@@ -20,7 +35,7 @@
 
 /* Link styles */
 .nav ul li a {
-    color: #61dafb;
+    color: var(--color-primary); /* Changed to variable */
     text-decoration: none;
     font-size: 18px;
     line-height: 22px;
@@ -29,14 +44,12 @@
 
 /* Hover effect for links */
 .nav ul li a:hover {
-    color: #ffffff;
+    color: var(--color-accent); /* Changed to variable */
 }
 
 .nav ul li a.active {
-    color: #ffffff;
+    color: var(--color-text); /* Changed to variable */
 }
-
-
 
 /* Responsive Design */
 
@@ -67,14 +80,15 @@
         flex-direction: row;
         height: auto;
     }
+
     .nav ul {
         gap: 25px;
-        flex-direction: row;     
-        justify-content: space-between;        
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .nav ul li a {
         font-size: 16px;
-        line-height: 22px;        
-    }  
+        line-height: 22px;
+    }
 }

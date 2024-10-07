@@ -1,19 +1,51 @@
 :root {
+    --overlay-background: rgba(27, 27, 27, 0.9); /* Slight transparency for overlay */
     --color-primary: #02afc5;
     --color-secondary: #35c9dd;
-    --color-tertiary: #87d1db;
+    --color-tertiary: #87d1db; /* From episodes.module.css */
     --color-accent: #a9f3fd;
-    --color-muted: #4cb5c3;
-    --color-background: #333333;
-    --color-text: #ffffff;
-    --color-border: #d2d2d2;
-    --color-favorite: #c2ab00;
-    --color-hover: #00cd30;
+    --color-muted: #4cb5c3; /* From episodes.module.css */
+    --color-background: hsl(0, 0%, 20%); /* From episodes.module.css */
+    --color-inverse-background: #f4f7f7; /* From episodes.module.css */
+    --color-lightbackground: #3f3f3f;
+    --episode-background:#454545;
+    --color-text: #ffffff; /* From episodes.module.css */
+    --color-text-lighter: #f1f1f1; /* From episodes.module.css */
+    --color-border: #d2d2d2; /* From episodes.module.css */
+    --color-favorite: #c2ab00; /* From episodes.module.css */
+    --color-hover: #00cd30; /* From episodes.module.css */
     --spacing-xsm: 6px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 32px;
     --spacing-xl: 64px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+}
+
+:root.light-mode {
+    --overlay-background: rgba(253, 253, 253, 0.9); /* Slight transparency for overlay */
+
+    --color-primary: #005f73; /* Deep teal */
+    --color-secondary: #0a9396; /* Cool cyan */
+    --color-tertiary: #94d2bd; /* Soft mint green */
+    --color-accent: #b2c8d9; /* Pale blue-gray accent */
+    --color-muted: #3db4b8; /* Muted teal */
+    --color-background: #e4e9e9; /* Light off-white for a cleaner look */
+    --color-inverse-background: #333333; /* From episodes.module.css */
+    --color-lightbackground: #cacaca;
+    --episode-background:#e3e3e3;
+    --color-text: #002635; /* Dark slate for text */
+    --color-text-lighter: #f1f1f1; /* From episodes.module.css */
+    --color-border: #c7d6d5; /* Softer, cool gray for borders */
+    --color-favorite: #9b2226; /* Deep burgundy */
+    --color-hover: #ae2012; /* Brightened hover state */    
+    --spacing-xsm: 6px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;    
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
     --border-radius-lg: 16px;

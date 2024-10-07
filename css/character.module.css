@@ -51,7 +51,7 @@
 .title {
     padding: var(--spacing-sm);
     background-color: var(--color-primary);
-    color: var(--color-text);
+    color: var(--color-text-lighter);
     display: flex;
     align-items: center;
     justify-content: center;

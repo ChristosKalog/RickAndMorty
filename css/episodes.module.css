@@ -1,6 +1,8 @@
 @import url('./variables.css');
 
-.mainEpisodeContainer::-webkit-scrollbar { width: 0; }
+.mainEpisodeContainer::-webkit-scrollbar {
+    width: 0;
+}
 
 .mainEpisodeContainer::-webkit-scrollbar-thumb {
     background-color: rgba(100, 100, 100, 0.3);
@@ -16,19 +18,14 @@
     margin: var(--spacing-md) auto;
     padding: 0 var(--spacing-lg);
     min-height: 42px;
-
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: var(--spacing-lg);
     width: 95%;
 }
 
-.leftButtonsContainer {
-    display: flex;
-    flex-direction: row;
-}
+
 
 .seasonSelect {
     min-width: 160px;
@@ -36,11 +33,10 @@
     border-radius: var(--border-radius-sm);
     border: 1px solid var(--color-background);
     margin-left: var(--spacing-md);
-
-    background-color: var(--color-background);
+    background-color: var(--color-lightbackground);
     color: var(--color-text);
 
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
 
     cursor: pointer;
@@ -97,14 +93,9 @@
     border-radius: var(--border-radius-md);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--color-border);
-    background-color: var(--color-tertiary);
+    background-color: var(--color-background);
     cursor: pointer;
 }
-
-
-
-
-
 
 .topSection {
     display: flex;
@@ -114,15 +105,13 @@
     margin-bottom: var(--spacing-sm);
 }
 
-
-
 .topSection p {
     margin-left: var(--spacing-md);
 }
 
-
 .rightSection {
-    display: flex;}
+    display: flex;
+}
 
 .botSection {
     display: flex;
@@ -161,10 +150,8 @@
     background-color: var(--color-secondary);
 }
 
-
 .heartIcon {
     color: var(--color-tertiary);
-
     cursor: pointer;
     opacity: 0.3;
     transition: color 0.2s ease, opacity 0.2s ease;
@@ -178,39 +165,6 @@
 .heartIconFavorite {
     color: var(--color-muted);
     opacity: 1;
-}
-
-.darkMode {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-}
-
-.darkMode .episodeElem {
-    background-color: #2a2a2a;
-    border-color: #444;
-}
-
-.darkMode .seasonSelect {
-    background-color: #333;
-    color: #f0f0f0;
-    border-color: #444;
-}
-
-.lightMode {
-
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.lightMode .episodeElem {
-    background-color: #ffffff;
-    border-color: #ccc;
-}
-
-.lightMode .seasonSelect {
-    background-color: #fff;
-    color: #333;
-    border-color: #ccc;
 }
 
 .goBackButton {
@@ -241,8 +195,15 @@
     background: linear-gradient(135deg, #ff4b2b, #ff416c);
 }
 
-@keyframes fadeIn {from {opacity: 0;  }  to {opacity: 1;}}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
 
+    to {
+        opacity: 1;
+    }
+}
 
 /* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
@@ -274,6 +235,10 @@
         width: 100%;
         padding: var(--spacing-sm);
         font-size: 0.9rem;
+    }
+
+    .episodeElem:nth-child(even) {
+        background-color: var(--episode-background);
     }
 
     .botSection {
@@ -311,74 +276,5 @@
 
     .icon {
         font-size: 1rem;
-    }
-
-    .seasonSelect {
-        min-width: 120px;
-        font-size: 0.9rem;
-        padding: var(--spacing-sm);
-        margin: 0;
-    }
-
-    .seasonSelect:last-child {margin-left: 12px;}
-
-    .mainEpisodeContainer {
-        padding: var(--spacing-xs);
-        border-radius: none;
-        background-color: transparent;
-        margin: 0;
-    }
-
-    .episodesContainer {
-        padding: var(--spacing-sm);
-        gap: var(--spacing-xs);
-    }
-
-    .episodeElem {
-        width: 95%;
-        padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 0.8rem;
-        border-radius: var(--spacing-sm);
-        margin-bottom: var(--spacing-sm);
-        background-color: transparent;
-    }
-
-    .lightMode .episodeElem:nth-child(even) {
-        background-color: #dfdfdf;
-        border-color: #ccc;
-    }
-
-    .darkMode .episodeElem:nth-child(even) {
-        background-color: #3a3a3a;
-    }
-
-    .topSection {
-        flex-direction: row-reverse;
-    }
-
-    .topSection .rightSection .noMarginPlease p{
-        margin-left: 0!important;
-    }
-
-    .botSection {
-        min-height: 30px;
-        height: auto!important;
-    }
-
-    .botSection h1 {
-        font-size: 1.4rem;
-    }
-
-    .clearFavoritesButton {
-        padding: var(--spacing-sm);
-        font-size: 1rem;
-    }
-
-    .goBackButton {
-        padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 1.2rem;
-        display: flex;
-        position: static;
-        margin: 0 auto;
     }
 }
